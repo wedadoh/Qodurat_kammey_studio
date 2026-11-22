@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+    <title>القدرات في دقيقة | القسم الكمي - استوديو ميار الأنصاري</title>
+    <!-- تحميل Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- تحميل الخطوط العربية الأنيقة -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,700;1,700&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // لوحة ألوان مستوحاة بدقة من الصورة المرجعية IMG_8692.jpeg
+                        blush: {
+                            50: '#FFF9FB',
+                            100: '#FCE7F1', // وردي باستيل فاتح للخلفيات
+                            200: '#F8D1E4',
+                            300: '#F2B2D1',
+                            400: '#E588B5',
+                        },
+                        berry: {
+                            500: '#C84B7A', // وردي أغمق للعناوين
+                            600: '#A63762', // توتي غني للعناصر الرئيسية
+                            700: '#882B52', // درجة النصوص الرئيسية في الصورة المرجعية
+                            800: '#6B2142',
+                            900: '#4F1730',
+                        },
+                        mauve: {
+                            300: '#C9B1DB', // موف ناعم (لون المنقلة في الشعار)
+                            500: '#8F6CA8',
+                            700: '#634778',
+                        },
+                        ivory: {
+                            50: '#FFFFFF',
+                            100: '#FFFDF9', // أبيض عاجي دافئ
+                            200: '#FAF3EC',
+                        },
+                        gold: {
+                            300: '#F7E39C',
+                            400: '#E8C568',
+                            500: '#D4AF37', // لمسات ذهبية فاخرة
+                            600: '#B58E22',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                        serif: ['Amiri', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* إعدادات أساسية لمنع التمرير العشوائي أثناء الكتابة بالقلم على iPad */
+        html, body {
+            background-color: #FCE7F1;
+            color: #6B2142;
+            font-family: 'Cairo', sans-serif;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+
+        /* تحسينات خاصة بالوضع الأفقي (iPad / Tablet Landscape) */
+        @media (orientation: landscape) and (max-height: 900px) {
+            #main-header {
+                padding-top: 0.35rem;
+                padding-bottom: 0.35rem;
+            }
+            #studio-container {
+                max-width: 99vw !important;
+                padding-top: 0.35rem !important;
+                padding-bottom: 0.35rem !important;
+                gap: 0.4rem !important;
+            }
+            #level-banner {
+                padding-top: 0.35rem !important;
+                padding-bottom: 0.35rem !important;
+            }
+            #board-wrapper {
+                min-height: 0 !important;
+                height: calc(100vh - 150px) !important;
+                max-height: calc(100vh - 150px) !important;
+            }
+            #question-image {
+                max-height: 38vh !important;
+                max-width: 94% !important;
+                width: auto !important;
+                height: auto !important;
+            }
+            #main-footer {
+                display: none;
+            }
+        }
+
+        /* خلفية وردية باستيل ناعمة مع لمسات هندسية وضوئية راقية */
+        .pastel-studio-bg {
+            background-color: #FCE7F1;
+            background-image: 
+                radial-gradient(circle at 12% 15%, rgba(255, 255, 255, 0.85) 0%, transparent 45%),
+                radial-gradient(circle at 88% 85%, rgba(201, 177, 219, 0.35) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 65%),
+                url("data:image/svg+xml,%3Csvg width='72' height='72' viewBox='0 0 72 72' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23882B52' stroke-width='0.6' stroke-opacity='0.06'%3E%3Ccircle cx='36' cy='36' r='18'/%3E%3Cpath d='M36 6 L42 30 L66 36 L42 42 L36 66 L30 42 L6 36 L30 30 Z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* تدرجات توتية وذهبية فاخرة */
+        .berry-gradient-text {
+            background: linear-gradient(135deg, #A63762 0%, #882B52 55%, #634778 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .berry-primary-btn {
+            background: linear-gradient(135deg, #C84B7A 0%, #A63762 55%, #882B52 100%);
+            box-shadow: 0 8px 20px -4px rgba(136, 43, 82, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .gold-accent-btn {
+            background: linear-gradient(135deg, #F7E39C 0%, #E8C568 45%, #D4AF37 100%);
+            box-shadow: 0 8px 22px -4px rgba(212, 175, 55, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.65);
+        }
+
+        /* إطار السبورة الفاخر بلمسة ذهبية وتوتية */
+        .board-luxury-frame {
+            border: 2px solid #D4AF37;
+            box-shadow: 
+                0 16px 40px -8px rgba(136, 43, 82, 0.18),
+                0 0 0 4px rgba(255, 253, 249, 0.9),
+                0 0 25px rgba(212, 175, 55, 0.22);
+        }
+
+        /* لوحة الرسم التفاعلية - مصممة لاستجابة فورية مع Apple Pencil */
+        #drawing-canvas {
+            touch-action: none;
+            cursor: crosshair;
+            pointer-events: auto;
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+        }
+
+        /* حركات رموز الرياضيات ثلاثية الأبعاد العائمة */
+        @keyframes float3D {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-9px) rotate(3deg); }
+        }
+        .animate-float-3d {
+            animation: float3D 5s ease-in-out infinite;
+        }
+        .animate-float-3d-delayed {
+            animation: float3D 6s ease-in-out 1.5s infinite;
+        }
+
+        @keyframes pulseSoft {
+            0%, 100% { transform: scale(1); box-shadow: 0 8px 22px -4px rgba(212, 175, 55, 0.45); }
+            50% { transform: scale(1.02); box-shadow: 0 12px 28px -2px rgba(212, 175, 55, 0.7); }
+        }
+        .animate-pulse-soft {
+            animation: pulseSoft 2.6s infinite;
+        }
+
+        @keyframes shakeCard {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-8px); }
+            40% { transform: translateX(8px); }
+            60% { transform: translateX(-5px); }
+            80% { transform: translateX(5px); }
+        }
+        .animate-shake {
+            animation: shakeCard 0.42s cubic-bezier(.36,.07,.19,.97) both;
+        }
+
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.96) translateY(10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .animate-enter {
+            animation: fadeInScale 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* شريط التمرير */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FCE7F1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #C84B7A;
+            border-radius: 9999px;
+        }
+
+        /* iPad 9th generation: portrait remains scrollable; landscape uses the full screen. */
+        html { min-height: 100%; }
+        body { min-height: 100vh; min-height: 100dvh; }
+        #studio-container, #studio-container > .flex-row { min-height: 0; }
+        #board-wrapper { min-height: 0; }
+        #drawing-canvas { display: block; }
+
+        /* Portrait: keep every control available in a natural vertical page. */
+        @media (orientation: portrait) {
+            body { justify-content: flex-start; overflow-y: auto; }
+            #studio-container { max-width: 100%; }
+            #studio-container > .flex-row { min-height: 68dvh; }
+            #board-wrapper { height: 68dvh; min-height: 480px; max-height: none; }
+            #toolbar-panel { max-height: 68dvh; }
+            #question-image { max-height: 38dvh; }
+            .extra-writing-area { flex: 1 1 auto; min-height: 150px; width: 100%; }
+        }
+
+        /* Landscape iPad (including the 10.2-inch 9th generation): compact chrome + full board. */
+        @media (orientation: landscape) and (min-width: 700px) and (max-height: 950px) {
+            html, body { width: 100%; height: 100%; min-height: 100%; overflow: hidden; }
+            body { height: 100vh; height: 100dvh; min-height: 0; justify-content: flex-start; }
+            #main-header { position: relative; top: auto; padding: 3px 12px !important; flex: 0 0 auto; }
+            #main-header > div { gap: 4px !important; }
+            #main-header .w-11, #main-header .sm\:w-12 { width: 34px; height: 34px; }
+            #main-header h1 { font-size: 15px !important; line-height: 1.2; }
+            #main-header p { font-size: 9px !important; line-height: 1.2; }
+            #levels-stepper { display: none !important; }
+            #main-header .order-3 { display: none !important; }
+            #studio-container {
+                width: 100%; max-width: 100% !important; flex: 1 1 auto;
+                min-height: 0; height: auto; padding: 5px 8px !important;
+                gap: 5px !important; overflow: hidden;
+            }
+            #level-banner { flex: 0 0 auto; padding: 4px 10px !important; gap: 5px !important; }
+            #level-banner h2 { font-size: 12px !important; line-height: 1.2; }
+            #level-banner button { padding: 4px 9px !important; font-size: 10px !important; }
+            #studio-container > .flex-row {
+                flex: 1 1 0; min-height: 0; height: 100%; gap: 7px !important;
+                overflow: hidden; align-items: stretch;
+            }
+            #toolbar-panel {
+                height: 100%; max-height: none !important; min-height: 0;
+                overflow-y: auto; overflow-x: hidden; padding: 4px !important;
+                gap: 3px !important; justify-content: space-around;
+            }
+            #toolbar-panel .tool-btn { padding: 5px !important; }
+            #toolbar-panel button { flex-shrink: 0; }
+            #toolbar-panel .w-7 { width: 22px !important; }
+            #studio-container > .flex-row > .flex-1 { min-width: 0; min-height: 0; }
+            #board-wrapper {
+                width: 100%; height: 100% !important; min-height: 0 !important;
+                max-height: none !important; flex: 1 1 auto;
+            }
+            #question-image { max-height: 36dvh !important; max-width: 94% !important; }
+            .extra-writing-area { flex: 1 1 auto; min-height: 0 !important; width: 100%; }
+            #main-footer, #studio-container > .flex-row > .flex-1 > .mt-2 { display: none !important; }
+        }
+
+        @media (max-width: 699px) and (orientation: landscape) {
+            body { overflow-y: auto; }
+            #board-wrapper { height: 65dvh !important; min-height: 360px !important; }
+            #toolbar-panel { max-height: 65dvh; }
+        }
+    </style>
+</head>
+<body class="pastel-studio-bg min-h-screen flex flex-col justify-between selection:bg-berry-500 selection:text-white relative">
+
+    <!-- كانفاس المؤثرات الاحتفالية الوردية والذهبية -->
+    <canvas id="confetti-canvas" class="fixed inset-0 pointer-events-none z-50"></canvas>
+
+    <!-- ==================== رموز رياضية ثلاثية الأبعاد عائمة في الخلفية (مستوحاة من الشعار) ==================== -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0 opacity-85" aria-hidden="true">
+        <!-- منقلة هندسية ثلاثية الأبعاد (موف) -->
+        <div class="hidden xl:block absolute top-24 right-6 w-20 h-20 animate-float-3d drop-shadow-lg">
+            <svg viewBox="0 0 100 100" class="w-full h-full">
+                <defs>
+                    <linearGradient id="gradMauve3D" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#E2D2F0"/>
+                        <stop offset="50%" stop-color="#B99AD3"/>
+                        <stop offset="100%" stop-color="#8763A6"/>
+                    </linearGradient>
+                </defs>
+                <path d="M15 75 A 38 38 0 0 1 85 75 L 72 75 A 25 25 0 0 0 28 75 Z" fill="url(#gradMauve3D)" stroke="#FFFDF9" stroke-width="2"/>
+                <line x1="50" y1="37" x2="50" y2="45" stroke="#634778" stroke-width="2"/>
+                <line x1="32" y1="44" x2="36" y2="51" stroke="#634778" stroke-width="2"/>
+                <line x1="68" y1="44" x2="64" y2="51" stroke="#634778" stroke-width="2"/>
+            </svg>
+        </div>
+
+        <!-- ساعة كرونوغراف ثلاثية الأبعاد (مرجاني وذهبي) -->
+        <div class="hidden xl:block absolute bottom-20 right-7 w-20 h-20 animate-float-3d-delayed drop-shadow-lg">
+            <svg viewBox="0 0 100 100" class="w-full h-full">
+                <defs>
+                    <linearGradient id="gradClock3D" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#F69B7B"/>
+                        <stop offset="100%" stop-color="#D95B43"/>
+                    </linearGradient>
+                </defs>
+                <circle cx="50" cy="52" r="34" fill="url(#gradClock3D)" stroke="#D4AF37" stroke-width="2.5"/>
+                <circle cx="50" cy="52" r="26" fill="#FFFDF9"/>
+                <line x1="50" y1="52" x2="50" y2="35" stroke="#882B52" stroke-width="3" stroke-linecap="round"/>
+                <line x1="50" y1="52" x2="63" y2="58" stroke="#D4AF37" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="50" cy="52" r="3" fill="#882B52"/>
+            </svg>
+        </div>
+
+        <!-- رمز باي π ثلاثي الأبعاد (وردي توتي) -->
+        <div class="hidden xl:block absolute top-28 left-6 w-16 h-16 animate-float-3d-delayed drop-shadow-lg">
+            <svg viewBox="0 0 100 100" class="w-full h-full">
+                <defs>
+                    <linearGradient id="gradPi3D" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#F8A5C2"/>
+                        <stop offset="100%" stop-color="#C84B7A"/>
+                    </linearGradient>
+                </defs>
+                <path d="M22 34 C35 28, 65 28, 78 34 L76 43 C68 40, 62 40, 60 40 L60 72 C60 78, 66 80, 70 76 L73 83 C64 89, 51 86, 51 73 L51 40 L41 40 L38 74 C37 83, 30 87, 24 84 L26 76 C29 77, 31 75, 32 71 L34 40 C29 40, 25 41, 22 42 Z" fill="url(#gradPi3D)" stroke="#FFFDF9" stroke-width="1.5"/>
+            </svg>
+        </div>
+
+        <!-- آلة حاسبة مصغرة ثلاثية الأبعاد -->
+        <div class="hidden xl:block absolute bottom-24 left-7 w-16 h-20 animate-float-3d drop-shadow-lg">
+            <svg viewBox="0 0 90 110" class="w-full h-full">
+                <defs>
+                    <linearGradient id="gradCalc3D" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#FFFDF9"/>
+                        <stop offset="100%" stop-color="#F2B2D1"/>
+                    </linearGradient>
+                </defs>
+                <rect x="12" y="10" width="66" height="90" rx="14" fill="url(#gradCalc3D)" stroke="#D4AF37" stroke-width="2.5"/>
+                <rect x="22" y="20" width="46" height="20" rx="5" fill="#882B52"/>
+                <circle cx="29" cy="54" r="5" fill="#E8C568"/>
+                <circle cx="45" cy="54" r="5" fill="#C84B7A"/>
+                <circle cx="61" cy="54" r="5" fill="#C9B1DB"/>
+                <circle cx="29" cy="70" r="5" fill="#C9B1DB"/>
+                <circle cx="45" cy="70" r="5" fill="#E8C568"/>
+                <circle cx="61" cy="70" r="5" fill="#C84B7A"/>
+                <rect x="24" y="82" width="42" height="9" rx="4.5" fill="#882B52"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- ==================== الشريط العلوي (الهوية الوردية الفاخرة وشريط التقدم) ==================== -->
+    <header id="main-header" class="sticky top-0 z-40 bg-ivory-100/90 backdrop-blur-md border-b-2 border-gold-400/50 px-3 sm:px-6 py-2.5 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+            
+            <!-- يمين: شعار المشروع وبيانات الطالبة والمدرسة من الصورة المرجعية -->
+            <div class="flex items-center gap-3">
+                <!-- أيقونة الشعار (ساعة ومنقلة ورمز رياضي) -->
+                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl gold-accent-btn p-[2px] shadow-md shrink-0">
+                    <div class="w-full h-full bg-blush-100 rounded-[14px] flex items-center justify-center relative overflow-hidden">
+                        <svg class="w-7 h-7 text-berry-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="13" r="8"></circle>
+                            <path d="M12 9v4l2.5 2.5"></path>
+                            <path d="M9 2h6"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <h1 class="text-lg sm:text-xl font-black berry-gradient-text tracking-wide">
+                            القدرات في دقيقة <span class="text-berry-600 font-bold text-sm sm:text-base">| القسم الكمي</span>
+                        </h1>
+                    </div>
+                    <p class="text-[11px] sm:text-xs text-berry-800/85 flex flex-wrap items-center gap-x-2">
+                        <span>إعداد وتقديم: <strong class="text-berry-700 font-extrabold">ميار الأنصاري</strong></span>
+                        <span class="text-gold-600">•</span>
+                        <span class="hidden md:inline font-semibold">الثانوية ٦٧ في جدة</span>
+                        <span class="hidden lg:inline text-gold-600">•</span>
+                        <span class="hidden lg:inline text-mauve-700 font-semibold">إشراف: معلمات القسم العلمي ومنصة القدرات والتحصيلي</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- وسط: شريط تقدم المراحل الخمس التفاعلي -->
+            <div class="flex items-center gap-1.5 sm:gap-2 bg-blush-100/90 px-3.5 py-1.5 rounded-2xl border border-gold-400/60 shadow-inner order-3 lg:order-2 w-full lg:w-auto justify-center">
+                <span class="text-xs text-berry-700 font-extrabold ml-1 hidden sm:inline">المراحل:</span>
+                <div id="levels-stepper" class="flex items-center gap-1.5 sm:gap-2">
+                    <!-- يتم توليد أزرار المراحل 1 إلى 5 ديناميكياً -->
+                </div>
+            </div>
+
+            <!-- يسار: أزرار التحكم (ملء الشاشة للتسجيل، الصوت، ضبط الإجابات) -->
+            <div class="flex items-center gap-2 order-2 lg:order-3">
+                <!-- زر تكبير السبورة للتسجيل -->
+                <button id="btn-focus-mode" onclick="toggleFocusMode()" title="تكبير مساحة الشرح للتسجيل" class="p-2.5 rounded-xl bg-ivory-100 hover:bg-blush-100 text-berry-700 border border-berry-400/40 shadow-sm transition flex items-center gap-1.5 text-xs font-bold">
+                    <svg class="w-4 h-4 text-berry-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
+                    <span class="hidden sm:inline" id="text-focus-mode">تكبير السبورة</span>
+                </button>
+
+                <!-- زر كتم/تشغيل المؤثرات الصوتية -->
+                <button id="btn-sound" onclick="toggleSound()" title="تشغيل / إيقاف الأصوات" class="p-2.5 rounded-xl bg-ivory-100 hover:bg-blush-100 text-berry-700 border border-berry-400/40 shadow-sm transition">
+                    <svg id="icon-sound-on" class="w-4 h-4 text-berry-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+                    <svg id="icon-sound-off" class="w-4 h-4 hidden text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"></path></svg>
+                </button>
+
+                <!-- زر ضبط الإجابات الصحيحة -->
+                <button onclick="openSettingsModal()" title="ضبط الإجابات الصحيحة قبل التسجيل" class="p-2.5 rounded-xl bg-ivory-100 hover:bg-blush-100 text-berry-700 border border-gold-500/50 shadow-sm transition flex items-center gap-1.5 text-xs font-bold">
+                    <svg class="w-4 h-4 text-gold-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    <span class="hidden md:inline">ضبط الإجابات</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== المحتوى الرئيسي: استوديو الشرح والتحدي ==================== -->
+    <main id="studio-container" class="relative z-10 flex-1 max-w-[96vw] w-full mx-auto px-2 sm:px-5 py-2.5 flex flex-col gap-2.5 transition-all duration-300">
+        
+        <!-- شريط عنوان المستوى الحالي + زر «اختبري فهمك» -->
+        <div id="level-banner" class="flex flex-wrap items-center justify-between gap-2 bg-ivory-100/95 backdrop-blur-sm border border-gold-400/60 rounded-2xl px-4 py-2 shadow-sm">
+            <div class="flex items-center gap-3">
+                <span id="level-badge" class="px-3.5 py-1 rounded-xl berry-primary-btn text-white font-extrabold text-xs sm:text-sm">المستوى الأول</span>
+                <div>
+                    <h2 id="level-title" class="text-sm sm:text-base font-black text-berry-800">سؤال ٢١ — حساب مساحة الجزء المظلل</h2>
+                </div>
+            </div>
+
+            <!-- أزرار التنقل أو بدء التحدي -->
+            <div class="flex items-center gap-2 mr-auto">
+                <button id="btn-prev-level" onclick="changeLevel(currentLevel - 1)" class="px-3 py-1.5 rounded-xl bg-blush-100 hover:bg-blush-200 text-berry-700 border border-berry-300 text-xs font-bold transition disabled:opacity-40 disabled:pointer-events-none">
+                    السابق
+                </button>
+                <button id="btn-open-quiz" onclick="openQuizModal()" class="px-5 py-2 rounded-xl gold-accent-btn hover:brightness-105 text-berry-900 font-black text-xs sm:text-sm animate-pulse-soft flex items-center gap-2 transition transform active:scale-95 border border-gold-500/60">
+                    <span>اختبري فهمك</span>
+                    <svg class="w-4 h-4 text-berry-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- ==================== منطقة العمل: شريط أدوات السبورة + لوحة السؤال التفاعلية المكبرة ==================== -->
+        <div class="flex flex-row gap-2.5 sm:gap-3 flex-1 items-stretch">
+            
+            <!-- شريط أدوات السبورة الرقمية الاحترافي (متوافق بالكامل مع Apple Pencil و iPad في الوضع الأفقي) -->
+            <aside id="toolbar-panel" class="bg-ivory-100/95 backdrop-blur-sm border-2 border-gold-400/55 rounded-2xl p-2 sm:p-2.5 flex flex-col items-center justify-between gap-1.5 shadow-lg shrink-0 z-20 overflow-y-auto max-h-[78vh]">
+                
+                <!-- 1. أدوات الرسم الأساسية -->
+                <div class="flex flex-col items-center gap-1">
+                    <span class="text-[10px] text-berry-700 font-extrabold hidden sm:block">الأدوات</span>
+                    
+                    <!-- قلم حر -->
+                    <button data-tool="pen" onclick="selectTool('pen')" title="قلم كتابة حر" class="tool-btn p-2 rounded-xl transition flex items-center justify-center">
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
+                    </button>
+
+                    <!-- قلم تمييز ملون -->
+                    <button data-tool="highlighter" onclick="selectTool('highlighter')" title="قلم تمييز وتظليل شفاف" class="tool-btn p-2 rounded-xl transition flex items-center justify-center">
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    </button>
+
+                    <!-- ممحاة -->
+                    <button data-tool="eraser" onclick="selectTool('eraser')" title="ممحاة" class="tool-btn p-2 rounded-xl transition flex items-center justify-center">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.8 14.2 13.9 5a2.1 2.1 0 0 1 3 0l2.1 2.1a2.1 2.1 0 0 1 0 3l-9.1 9.1H7.2l-2.4-2.4a1.8 1.8 0 0 1 0-2.6Z"/><path stroke-linecap="round" stroke-width="2" d="m9.2 18.8 7.1-7.1"/></svg>
+                    </button>
+                </div>
+
+                <div class="w-7 h-[1px] bg-berry-200"></div>
+
+                <!-- 2. أدوات الأشكال الهندسية والأسهم -->
+                <div class="flex flex-col items-center gap-1">
+                    <span class="text-[10px] text-berry-700 font-extrabold hidden sm:block">أشكال</span>
+
+                    <!-- رسم دائرة -->
+                    <button data-tool="circle" onclick="selectTool('circle')" title="رسم دائرة" class="tool-btn p-2 rounded-xl transition flex items-center justify-center">
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke-width="2"></circle></svg>
+                    </button>
+
+                    <!-- رسم مربع / مستطيل -->
+                    <button data-tool="rect" onclick="selectTool('rect')" title="رسم مربع أو مستطيل" class="tool-btn p-2 rounded-xl transition flex items-center justify-center">
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2" stroke-width="2"></rect></svg>
+                    </button>
+
+                    <!-- رسم سهم -->
+                    <button data-tool="arrow" onclick="selectTool('arrow')" title="رسم سهم" class="tool-btn p-2 rounded-xl transition flex items-center justify-center">
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </button>
+
+                    <!-- رسم خط مستقيم -->
+                    <button data-tool="line" onclick="selectTool('line')" title="رسم خط مستقيم" class="tool-btn p-2 rounded-xl transition flex items-center justify-center">
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5" stroke-width="2.2" stroke-linecap="round"></line></svg>
+                    </button>
+                </div>
+
+                <div class="w-7 h-[1px] bg-berry-200"></div>
+
+                <!-- 3. ألوان الكتابة -->
+                <div class="flex flex-col items-center gap-1">
+                    <button onclick="selectColor('#882B52')" data-color="#882B52" title="توتي غامق" class="color-btn w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#882B52] border-2 border-white shadow transition transform scale-110"></button>
+                    <button onclick="selectColor('#E11D48')" data-color="#E11D48" title="وردي قرمزي مشرق" class="color-btn w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#E11D48] border-2 border-white shadow transition"></button>
+                    <button onclick="selectColor('#7E22CE')" data-color="#7E22CE" title="بنفسجي ملكي" class="color-btn w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#7E22CE] border-2 border-white shadow transition"></button>
+                    <button onclick="selectColor('#0D9488')" data-color="#0D9488" title="تركواز زمردي" class="color-btn w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#0D9488] border-2 border-white shadow transition"></button>
+                    <button onclick="selectColor('#D97706')" data-color="#D97706" title="ذهبي دافئ" class="color-btn w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#D97706] border-2 border-white shadow transition"></button>
+                </div>
+
+                <div class="w-7 h-[1px] bg-berry-200"></div>
+
+                <!-- 4. حجم القلم -->
+                <div class="flex flex-col items-center gap-1">
+                    <button onclick="selectSize(3)" data-size="3" title="خط رفيع" class="size-btn w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-blush-100 border border-berry-500 flex items-center justify-center">
+                        <span class="w-1.5 h-1.5 rounded-full bg-berry-800"></span>
+                    </button>
+                    <button onclick="selectSize(6)" data-size="6" title="خط متوسط" class="size-btn w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-blush-50 border border-transparent flex items-center justify-center">
+                        <span class="w-2.5 h-2.5 rounded-full bg-berry-800"></span>
+                    </button>
+                    <button onclick="selectSize(12)" data-size="12" title="خط عريض" class="size-btn w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-blush-50 border border-transparent flex items-center justify-center">
+                        <span class="w-3.5 h-3.5 rounded-full bg-berry-800"></span>
+                    </button>
+                </div>
+
+                <div class="w-7 h-[1px] bg-berry-200"></div>
+
+                <!-- 5. تراجع، إعادة، ومسح الكل -->
+                <div class="flex flex-col items-center gap-1">
+                    <button onclick="undoCanvas()" title="تراجع" class="p-2 rounded-xl bg-blush-100 hover:bg-blush-200 text-berry-800 transition">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg>
+                    </button>
+                    <button onclick="redoCanvas()" title="إعادة" class="p-2 rounded-xl bg-blush-100 hover:bg-blush-200 text-berry-800 transition">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 10h-10a8 8 0 00-8 8v2M21 10l-6 6m6-6l-6-6"></path></svg>
+                    </button>
+                    <button onclick="clearCurrentCanvas()" title="مسح جميع الكتابات" class="p-2 rounded-xl bg-rose-100 hover:bg-rose-200 text-rose-700 transition">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+
+            </aside>
+
+            <!-- ==================== لوحة العرض والرسم المباشر المكبرة (صورة السؤال الأصلية + Canvas فوقها) ==================== -->
+            <div class="flex-1 flex flex-col">
+                <div id="board-wrapper" class="relative w-full h-[78vh] min-h-[620px] bg-white rounded-2xl board-luxury-frame overflow-hidden flex flex-col items-center justify-start">
+                    
+                    <!-- صورة السؤال الأصلية كاملة في الجزء العلوي -->
+                    <div class="relative z-0 w-full shrink-0 flex items-center justify-center bg-white px-3 pt-3 pb-2">
+                        <img id="question-image" src="IMG_8809.jpeg" alt="صورة السؤال الرياضي" class="w-auto h-auto max-w-[94%] max-h-[46vh] object-contain select-none pointer-events-none block" />
+                    </div>
+
+                    <!-- مساحة بيضاء إضافية مستقلة للشرح والكتابة أسفل الصورة -->
+                    <div class="extra-writing-area relative z-0 flex flex-col items-center justify-start pt-3">
+                        <span class="text-[11px] sm:text-xs font-bold text-berry-300/70 bg-white/80 px-3 py-1 rounded-full">مساحة إضافية للشرح والكتابة</span>
+                    </div>
+                    
+                    <!-- رسالة مساعدة وزر إرفاق يدوي يظهر فقط في حال لم يجد المتصفح ملف الصورة محلياً -->
+                    <div id="image-fallback-box" class="hidden absolute inset-0 z-30 bg-ivory-100/95 flex-col items-center justify-center p-6 text-center">
+                        <p class="text-berry-800 font-black text-base sm:text-lg mb-2">تعذر العثور على ملف الصورة (<span id="missing-img-name" class="text-berry-600"></span>)</p>
+                        <p class="text-xs sm:text-sm text-mauve-700 font-semibold mb-4">يمكنكِ تحديد صورة السؤال مباشرة من جهازكِ (iPad / الصور) وسيتم حفظها للعرض والشرح فوراً:</p>
+                        <label class="px-5 py-2.5 rounded-xl berry-primary-btn text-white font-black text-sm cursor-pointer hover:brightness-110 transition">
+                            <span>اختيار صورة السؤال من الجهاز 📁</span>
+                            <input type="file" accept="image/*" class="hidden" onchange="handleManualImageUpload(event)" />
+                        </label>
+                    </div>
+
+                    <!-- طبقة رسم واحدة تغطي صورة السؤال والمساحة الإضافية معاً -->
+                    <canvas id="drawing-canvas" class="absolute inset-0 w-full h-full z-10"></canvas>
+
+                    <!-- شارة أنيقة في زاوية السبورة للتسجيل -->
+                    <div class="absolute bottom-2.5 left-3 z-20 pointer-events-none bg-ivory-100/90 backdrop-blur-sm border border-gold-400 px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-berry-500 animate-ping"></span>
+                        <span class="text-[11px] font-extrabold text-berry-700">ميار الأنصاري • القدرات في دقيقة</span>
+                    </div>
+                </div>
+
+                <!-- تلميح سريع أسفل السبورة -->
+                <div class="mt-2 flex flex-wrap items-center justify-between text-xs text-berry-800/80 px-1 font-semibold">
+                    <div class="flex items-center gap-2">
+                        <span class="inline-block w-2 h-2 rounded-full bg-berry-500"></span>
+                        <span>مساحة الشرح نشطة ومكبرة: اكتبي مباشرة بالقلم الإلكتروني (Apple Pencil) فوق السؤال.</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <label class="text-berry-600 hover:underline cursor-pointer font-bold">
+                            <span>تغيير صورة السؤال 📁</span>
+                            <input type="file" accept="image/*" class="hidden" onchange="handleManualImageUpload(event)" />
+                        </label>
+                        <span class="text-gold-600">|</span>
+                        <div id="level-status-indicator" class="font-extrabold text-berry-700">
+                            حالة المستوى: قيد الشرح ✍️
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ==================== نافذة التحدي التفاعلي (اختبري فهمك) ==================== -->
+    <div id="quiz-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-6 bg-berry-900/60 backdrop-blur-md transition-opacity">
+        <div class="bg-ivory-100 border-2 border-gold-400 rounded-3xl max-w-4xl w-full p-5 sm:p-7 shadow-[0_20px_60px_rgba(136,43,82,0.3)] relative animate-enter max-h-[92vh] overflow-y-auto">
+            
+            <!-- زر العودة للسبورة لمراجعة الشرح -->
+            <button onclick="closeQuizModal()" class="absolute top-4 left-4 px-3.5 py-1.5 rounded-xl bg-blush-100 hover:bg-blush-200 text-berry-800 border border-berry-300 text-xs font-extrabold flex items-center gap-1.5 transition">
+                <svg class="w-4 h-4 text-berry-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
+                <span>العودة للسبورة</span>
+            </button>
+
+            <!-- رأس التحدي -->
+            <div class="text-center mb-5 mt-2">
+                <span class="inline-block px-4 py-1 rounded-full bg-blush-100 border border-gold-400 text-berry-700 text-xs font-extrabold mb-2">✨ التحدي التفاعلي • اختبري فهمك ✨</span>
+                <h3 id="quiz-question-heading" class="text-xl sm:text-2xl font-black berry-gradient-text">المستوى الأول — سؤال ٢١</h3>
+                <p id="quiz-question-subtext" class="text-xs sm:text-sm text-mauve-700 font-bold mt-1">اختاري البطاقة التي تمثل الإجابة الصحيحة:</p>
+            </div>
+
+            <!-- صورة السؤال الأصلية مع رسومات الشرح للمرجعية السريعة -->
+            <div class="mb-5 bg-white rounded-2xl border-2 border-blush-200 overflow-hidden max-h-48 sm:max-h-56 flex items-center justify-center relative mx-auto shadow-inner">
+                <img id="quiz-preview-img" src="" alt="معاينة السؤال" class="max-h-48 sm:max-h-56 w-auto object-contain" />
+                <img id="quiz-preview-drawing" src="" alt="" class="absolute inset-0 w-full h-full object-contain pointer-events-none" />
+            </div>
+
+            <!-- شبكة بطاقات الخيارات الأربعة الفاخرة -->
+            <div id="options-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 mb-5">
+                <!-- يتم توليد البطاقات أ، ب، ج، د ديناميكياً -->
+            </div>
+
+            <!-- منطقة التغذية الراجعة والنتيجة -->
+            <div id="quiz-feedback-box" class="hidden rounded-2xl p-4 text-center border-2 transition-all duration-300">
+                <p id="quiz-feedback-title" class="text-lg sm:text-xl font-black mb-1"></p>
+                <p id="quiz-feedback-desc" class="text-xs sm:text-sm font-semibold mb-3"></p>
+                
+                <!-- زر التحكم اليدوي في توقيت الانتقال للسؤال التالي -->
+                <div id="next-level-action" class="hidden justify-center">
+                    <button id="btn-next-level" onclick="goToNextLevel()" class="px-7 py-3 rounded-2xl berry-primary-btn hover:brightness-110 text-white font-black text-base flex items-center gap-2 transition transform hover:scale-105 border border-gold-300/60">
+                        <span id="btn-next-level-text">الانتقال إلى السؤال التالي</span>
+                        <svg class="w-5 h-5 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ==================== نافذة ضبط الإجابات الصحيحة ==================== -->
+    <div id="settings-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-berry-900/65 backdrop-blur-md">
+        <div class="bg-ivory-100 border-2 border-gold-400 rounded-3xl max-w-xl w-full p-6 shadow-2xl animate-enter">
+            <div class="flex items-center justify-between border-b border-blush-200 pb-3 mb-4">
+                <div>
+                    <h3 class="text-lg sm:text-xl font-black berry-gradient-text">إعدادات التحدي وضبط الإجابات</h3>
+                    <p class="text-xs text-mauve-700 font-semibold">تأكدي من الإجابة الصحيحة لكل مستوى أو عدّليها قبل بدء تسجيل الشاشة</p>
+                </div>
+                <button onclick="closeSettingsModal()" class="p-2 rounded-xl bg-blush-100 text-berry-800 hover:bg-blush-200 font-bold">✕</button>
+            </div>
+
+            <div id="settings-list" class="space-y-3 max-h-[60vh] overflow-y-auto pl-1">
+                <!-- يتم توليد إعدادات المستويات الخمسة هنا -->
+            </div>
+
+            <div class="mt-5 pt-3 border-t border-blush-200 flex justify-end gap-3">
+                <button onclick="closeSettingsModal()" class="px-6 py-2.5 rounded-xl berry-primary-btn text-white font-black text-sm hover:brightness-110 transition">
+                    حفظ وإغلاق للاستعداد للتسجيل ✓
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== الشاشة الختامية الفاخرة (بعد إتمام المستويات الخمسة) ==================== -->
+    <section id="completion-screen" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-8 pastel-studio-bg overflow-y-auto">
+        <div class="max-w-3xl w-full bg-ivory-100/95 border-2 border-gold-400 rounded-3xl p-6 sm:p-10 text-center shadow-[0_25px_70px_rgba(136,43,82,0.28)] relative animate-enter my-auto">
+            
+            <!-- شارة ذهبية ووردية فاخرة -->
+            <div class="w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-5 rounded-full gold-accent-btn p-1.5 shadow-xl animate-float-3d">
+                <div class="w-full h-full rounded-full bg-blush-100 flex items-center justify-center border-2 border-berry-500">
+                    <svg class="w-14 h-14 sm:w-16 sm:h-16 text-berry-700 drop-shadow" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                </div>
+            </div>
+
+            <span class="inline-block px-4 py-1 rounded-full bg-blush-100 border border-gold-400 text-berry-700 text-xs sm:text-sm font-extrabold mb-3">
+                وسام التميز والإتقان في القسم الكمي
+            </span>
+
+            <h2 class="text-3xl sm:text-5xl font-black berry-gradient-text mb-3 leading-tight font-serif">
+                لقد أتممتِ التحدي الكمي!
+            </h2>
+
+            <p class="text-base sm:text-lg text-berry-800 font-bold mb-2">
+                إعداد وتقديم الطالبة المبدعة: <span class="text-berry-600 underline decoration-gold-500 underline-offset-4">ميار الأنصاري</span>
+            </p>
+            <p class="text-xs sm:text-sm text-mauve-700 font-bold mb-6">
+                الثانوية السابعة والستون في جدة • بإشراف: معلمات القسم العلمي ومنصة القدرات والتحصيلي
+                <br>
+                <span class="italic text-berry-700 mt-1 inline-block">«نتعاون اليوم، حتى نحقق طموحات الغد»</span>
+            </p>
+
+            <!-- قائمة المستويات الخمسة المكتملة -->
+            <div class="bg-blush-50 border border-gold-400/60 rounded-2xl p-4 sm:p-5 mb-7 text-right">
+                <h4 class="text-xs sm:text-sm font-black text-berry-700 mb-3 text-center">سجل الإنجاز — جميع المراحل الخمس مكتملة بنجاح:</h4>
+                <div id="completed-levels-summary" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    <!-- تُملأ تلقائياً -->
+                </div>
+            </div>
+
+            <!-- أزرار الشاشة الختامية -->
+            <div class="flex flex-wrap items-center justify-center gap-4">
+                <button onclick="restartWholeStudio()" class="px-7 py-3.5 rounded-2xl berry-primary-btn hover:brightness-110 text-white font-black text-base transition transform hover:scale-105">
+                    إعادة التجربة من البداية ↺
+                </button>
+                <button onclick="closeCompletionToReview()" class="px-6 py-3.5 rounded-2xl bg-blush-100 hover:bg-blush-200 text-berry-800 border border-berry-300 font-extrabold text-sm transition">
+                    العودة لاستعراض السبورة
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== تذييل أنيق ==================== -->
+    <footer id="main-footer" class="relative z-10 py-2.5 px-4 border-t border-gold-400/40 bg-ivory-100/85 text-center text-[11px] sm:text-xs text-berry-800/80 font-semibold">
+        مشروع «القدرات في دقيقة | القسم الكمي» — إعداد وتقديم: <span class="text-berry-700 font-black">ميار الأنصاري</span> | الثانوية السابعة والستون في جدة | «نتعاون اليوم، حتى نحقق طموحات الغد»
+    </footer>
+
+    <!-- ==================== المنطق البرمجي التفاعلي المتكامل ==================== -->
+    <script>
+        /**
+         * بيانات المستويات الخمسة والصور الأصلية المرفقة
+         * الصور مدرجة كما هي تماماً دون أي قص أو تعديل
+         */
+        const levelsData = [
+            {
+                id: 1,
+                badge: "المستوى الأول",
+                title: "سؤال ٢١ — حساب مساحة الجزء المظلل",
+                image: "IMG_8809.jpeg",
+                fallbackImages: ["IMG_8809_3.jpeg", "IMG_8809_2.jpeg"],
+                promptText: "بناءً على شرحكِ للسؤال ٢١، ما هي الإجابة الصحيحة؟",
+                options: [
+                    { key: "أ", label: "١٥٧" },
+                    { key: "ب", label: "٣١٤" },
+                    { key: "ج", label: "٦٢٨" },
+                    { key: "د", label: "٤٠٠" }
+                ],
+                correctKey: "ج",
+                explanationHint: "إجابة صحيحة! ٦٢٨ هي الإجابة المعتمدة لهذا السؤال."
+            },
+            {
+                id: 2,
+                badge: "المستوى الثاني",
+                title: "سؤال ٢٢ — المقارنة بين القوى العشرية",
+                image: "IMG_8811.jpeg",
+                fallbackImages: ["IMG_8811_3.jpeg", "IMG_8811_2.jpeg"],
+                promptText: "بناءً على شرحكِ للسؤال ٢٢، ما هي الإجابة الصحيحة؟",
+                options: [
+                    { key: "أ", label: "القيمة الأولى أكبر" },
+                    { key: "ب", label: "القيمة الثانية أكبر" },
+                    { key: "ج", label: "القيمتان متساويتان" },
+                    { key: "د", label: "المعطيات غير كافية" }
+                ],
+                correctKey: "أ",
+                explanationHint: "إجابة صحيحة! القيمة الأولى أكبر لأن الأس الأصغر للأساس (٠,١) يعطي القيمة الأكبر."
+            },
+            {
+                id: 3,
+                badge: "المستوى الثالث",
+                title: "سؤال ٢٣ — الهندسة ونسبة الجزء المظلل",
+                image: "IMG_8812.jpeg",
+                fallbackImages: ["IMG_8812_3.jpeg", "IMG_8812_2.jpeg"],
+                promptText: "بناءً على شرحكِ للسؤال ٢٣، ما هي الإجابة الصحيحة؟",
+                options: [
+                    { key: "أ", label: "القيمة الأولى أكبر" },
+                    { key: "ب", label: "القيمة الثانية أكبر" },
+                    { key: "ج", label: "القيمتان متساويتان" },
+                    { key: "د", label: "المعطيات غير كافية" }
+                ],
+                correctKey: "ج",
+                explanationHint: "إجابة صحيحة! القيمتان متساويتان وفق المعطيات المعتمدة للسؤال."
+            },
+            {
+                id: 4,
+                badge: "المستوى الرابع",
+                title: "سؤال ٢٤ — المعادلات الجبرية والنسب المئوية",
+                image: "IMG_8813.jpeg",
+                fallbackImages: ["IMG_8813_3.jpeg", "IMG_8813_2.jpeg"],
+                promptText: "بناءً على شرحكِ للسؤال ٢٤، ما هي الإجابة الصحيحة؟",
+                options: [
+                    { key: "أ", label: "القيمة الأولى أكبر" },
+                    { key: "ب", label: "القيمة الثانية أكبر" },
+                    { key: "ج", label: "القيمتان متساويتان" },
+                    { key: "د", label: "المعطيات غير كافية" }
+                ],
+                correctKey: "أ",
+                explanationHint: "إجابة صحيحة! القيمة الأولى (س) أكبر من القيمة الثانية (١٤)."
+            },
+            {
+                id: 5,
+                badge: "المستوى الخامس",
+                title: "سؤال ٢٥ — تحليل الرسوم البيانية (ميزانية الجامعات)",
+                image: "IMG_8814.jpeg",
+                fallbackImages: ["IMG_8814_3.jpeg", "IMG_8814_2.jpeg"],
+                promptText: "بناءً على شرحكِ للسؤال ٢٥، ما هي الإجابة الصحيحة؟",
+                options: [
+                    { key: "أ", label: "جامعة الملك فهد" },
+                    { key: "ب", label: "جامعة الملك سعود" },
+                    { key: "ج", label: "جامعة الملك عبد العزيز" },
+                    { key: "د", label: "جامعة أم القرى" }
+                ],
+                correctKey: "أ",
+                explanationHint: "إجابة صحيحة! جامعة الملك فهد هي التي تقلصت ميزانيتها في آخر عام."
+            }
+        ];
+
+        // حالة التطبيق العامة
+        let currentLevel = 0;
+        let completedLevels = [false, false, false, false, false];
+        let soundEnabled = true;
+        let isFocusMode = false;
+
+        // حفظ سجل الرسم (Undo/Redo Stacks) لكل مستوى بشكل مستقل
+        const levelCanvasHistory = levelsData.map(() => ({
+            undoStack: [],
+            redoStack: []
+        }));
+
+        // إعدادات أدوات الرسم الحالية
+        let currentTool = 'pen'; // pen, highlighter, eraser, circle, rect, arrow, line
+        let currentColor = '#882B52';
+        let currentSize = 3;
+        let isDrawing = false;
+        let startX = 0;
+        let startY = 0;
+        let snapshotBeforeShape = null;
+
+        // عناصر DOM للسبورة
+        const canvas = document.getElementById('drawing-canvas');
+        const ctx = canvas.getContext('2d', { willReadFrequently: true });
+        const questionImg = document.getElementById('question-image');
+
+        // ==================== نظام المؤثرات الصوتية المدمج (Web Audio API) ====================
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+        function playTone(type) {
+            if (!soundEnabled) return;
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+
+            const now = audioCtx.currentTime;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            if (type === 'click') {
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(560, now);
+                osc.frequency.exponentialRampToValueAtTime(720, now + 0.06);
+                gain.gain.setValueAtTime(0.07, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.07);
+                osc.start(now);
+                osc.stop(now + 0.07);
+            } else if (type === 'success') {
+                const notes = [523.25, 659.25, 783.99, 1046.50];
+                notes.forEach((freq, i) => {
+                    const o = audioCtx.createOscillator();
+                    const g = audioCtx.createGain();
+                    o.type = 'triangle';
+                    o.frequency.setValueAtTime(freq, now + i * 0.09);
+                    g.gain.setValueAtTime(0.13, now + i * 0.09);
+                    g.gain.exponentialRampToValueAtTime(0.001, now + i * 0.09 + 0.35);
+                    o.connect(g);
+                    g.connect(audioCtx.destination);
+                    o.start(now + i * 0.09);
+                    o.stop(now + i * 0.09 + 0.35);
+                });
+            } else if (type === 'error') {
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(240, now);
+                osc.frequency.linearRampToValueAtTime(190, now + 0.22);
+                gain.gain.setValueAtTime(0.09, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.24);
+                osc.start(now);
+                osc.stop(now + 0.24);
+            } else if (type === 'fanfare') {
+                const fanfare = [523.25, 659.25, 783.99, 1046.50, 783.99, 1046.50];
+                fanfare.forEach((freq, i) => {
+                    const o = audioCtx.createOscillator();
+                    const g = audioCtx.createGain();
+                    o.type = 'triangle';
+                    o.frequency.setValueAtTime(freq, now + i * 0.12);
+                    g.gain.setValueAtTime(0.15, now + i * 0.12);
+                    g.gain.exponentialRampToValueAtTime(0.001, now + i * 0.12 + 0.45);
+                    o.connect(g);
+                    g.connect(audioCtx.destination);
+                    o.start(now + i * 0.12);
+                    o.stop(now + i * 0.12 + 0.45);
+                });
+            }
+        }
+
+        function toggleSound() {
+            soundEnabled = !soundEnabled;
+            document.getElementById('icon-sound-on').classList.toggle('hidden', !soundEnabled);
+            document.getElementById('icon-sound-off').classList.toggle('hidden', soundEnabled);
+            if (soundEnabled) playTone('click');
+        }
+
+        // ==================== محرك كتابة محسّن للآيباد و Apple Pencil ====================
+        let lastPointX = 0;
+        let lastPointY = 0;
+        let activePointerId = null;
+
+        function getCanvasSize() {
+            return {
+                width: canvas.clientWidth || 0,
+                height: canvas.clientHeight || 0
+            };
+        }
+
+        function drawImageState(dataUrl) {
+            const size = getCanvasSize();
+            ctx.setTransform(1, 0, 0, 1, 0, 0);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            if (!dataUrl) {
+                ctx.setTransform(canvas.width / Math.max(size.width, 1), 0, 0,
+                    canvas.height / Math.max(size.height, 1), 0, 0);
+                return;
+            }
+            const img = new Image();
+            img.onload = () => {
+                ctx.setTransform(1, 0, 0, 1, 0, 0);
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                const dpr = canvas.width / Math.max(size.width, 1);
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            };
+            img.src = dataUrl;
+            const dpr = canvas.width / Math.max(size.width, 1);
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        }
+
+        function resizeCanvasAndRestore() {
+            const wrapper = document.getElementById('board-wrapper');
+            const rect = wrapper.getBoundingClientRect();
+            if (!rect.width || !rect.height) return;
+
+            // اجعل طبقة الرسم تغطي الإطار كله: صورة السؤال + المساحة البيضاء الإضافية.
+            canvas.style.left = '0px';
+            canvas.style.top = '0px';
+            canvas.style.right = '0px';
+            canvas.style.bottom = '0px';
+            canvas.style.width = `${rect.width}px`;
+            canvas.style.height = `${rect.height}px`;
+
+            const dpr = Math.max(1, Math.min(window.devicePixelRatio || 1, 3));
+            const pixelWidth = Math.max(1, Math.round(rect.width * dpr));
+            const pixelHeight = Math.max(1, Math.round(rect.height * dpr));
+            const changed = canvas.width !== pixelWidth || canvas.height !== pixelHeight;
+            if (changed) {
+                canvas.width = pixelWidth;
+                canvas.height = pixelHeight;
+            }
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+
+            // استعادة آخر كتابة للمستوى بعد تغيير الحجم.
+            const history = levelCanvasHistory[currentLevel];
+            const lastState = history.undoStack.length
+                ? history.undoStack[history.undoStack.length - 1]
+                : null;
+            if (lastState) {
+                const img = new Image();
+                img.onload = () => {
+                    ctx.setTransform(1, 0, 0, 1, 0, 0);
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+                };
+                img.src = lastState;
+            } else {
+                ctx.clearRect(0, 0, rect.width, rect.height);
+            }
+        }
+
+        function saveCanvasState() {
+            const history = levelCanvasHistory[currentLevel];
+            history.undoStack.push(canvas.toDataURL('image/png'));
+            if (history.undoStack.length > 40) history.undoStack.shift();
+            history.redoStack = [];
+        }
+
+        function restoreHistoryState(dataUrl) {
+            const size = getCanvasSize();
+            const dpr = canvas.width / Math.max(size.width, 1);
+            ctx.setTransform(1, 0, 0, 1, 0, 0);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            if (!dataUrl) {
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+                return;
+            }
+            const img = new Image();
+            img.onload = () => {
+                ctx.setTransform(1, 0, 0, 1, 0, 0);
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            };
+            img.src = dataUrl;
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        }
+
+        function undoCanvas() {
+            playTone('click');
+            const history = levelCanvasHistory[currentLevel];
+            if (!history.undoStack.length) return;
+            history.redoStack.push(history.undoStack.pop());
+            restoreHistoryState(history.undoStack[history.undoStack.length - 1] || null);
+        }
+
+        function redoCanvas() {
+            playTone('click');
+            const history = levelCanvasHistory[currentLevel];
+            if (!history.redoStack.length) return;
+            const state = history.redoStack.pop();
+            history.undoStack.push(state);
+            restoreHistoryState(state);
+        }
+
+        function clearCurrentCanvas() {
+            playTone('click');
+            const size = getCanvasSize();
+            ctx.clearRect(0, 0, size.width, size.height);
+            saveCanvasState();
+        }
+
+        function getPointerPos(e) {
+            const rect = canvas.getBoundingClientRect();
+            return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+        }
+
+        function applyStrokeStyle(pressure = 0.5) {
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            ctx.miterLimit = 2;
+            if (currentTool === 'eraser') {
+                ctx.globalCompositeOperation = 'destination-out';
+                ctx.globalAlpha = 1;
+                ctx.lineWidth = Math.max(20, currentSize * 6);
+            } else if (currentTool === 'highlighter') {
+                ctx.globalCompositeOperation = 'source-over';
+                ctx.globalAlpha = 0.28;
+                ctx.strokeStyle = currentColor;
+                ctx.lineWidth = Math.max(8, currentSize * 4);
+            } else {
+                ctx.globalCompositeOperation = 'source-over';
+                ctx.globalAlpha = 1;
+                ctx.strokeStyle = currentColor;
+                ctx.fillStyle = currentColor;
+                // ضغط القلم يؤثر بشكل لطيف دون أن يجعل الخط رفيعاً جداً.
+                ctx.lineWidth = currentTool === 'pen'
+                    ? Math.max(1.8, currentSize * (0.72 + Math.min(1, Math.max(0.15, pressure)) * 0.55))
+                    : currentSize;
+            }
+        }
+
+        function drawSmoothPoint(point) {
+            const midX = (lastPointX + point.x) / 2;
+            const midY = (lastPointY + point.y) / 2;
+            ctx.beginPath();
+            ctx.moveTo(lastPointX, lastPointY);
+            ctx.quadraticCurveTo(lastPointX, lastPointY, midX, midY);
+            ctx.stroke();
+            lastPointX = point.x;
+            lastPointY = point.y;
+        }
+
+        canvas.addEventListener('pointerdown', (e) => {
+            if (e.pointerType === 'mouse' && e.button !== 0) return;
+            e.preventDefault();
+            if (isDrawing) return;
+            activePointerId = e.pointerId;
+            try { canvas.setPointerCapture(e.pointerId); } catch (_) {}
+            isDrawing = true;
+            const pos = getPointerPos(e);
+            startX = lastPointX = pos.x;
+            startY = lastPointY = pos.y;
+            applyStrokeStyle(e.pressure || 0.5);
+
+            if (['pen', 'highlighter', 'eraser'].includes(currentTool)) {
+                ctx.beginPath();
+                ctx.arc(pos.x, pos.y, Math.max(1, ctx.lineWidth / 2), 0, Math.PI * 2);
+                if (currentTool === 'eraser') {
+                    ctx.save();
+                    ctx.globalCompositeOperation = 'destination-out';
+                    ctx.fill();
+                    ctx.restore();
+                } else {
+                    ctx.fillStyle = currentColor;
+                    ctx.fill();
+                }
+            } else {
+                snapshotBeforeShape = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            }
+        }, { passive: false });
+
+        canvas.addEventListener('pointermove', (e) => {
+            if (!isDrawing || (activePointerId !== null && e.pointerId !== activePointerId)) return;
+            e.preventDefault();
+            const events = typeof e.getCoalescedEvents === 'function' ? e.getCoalescedEvents() : [e];
+            const points = events.length ? events : [e];
+            if (['pen', 'highlighter', 'eraser'].includes(currentTool)) {
+                for (const sample of points) {
+                    const pos = getPointerPos(sample);
+                    applyStrokeStyle(sample.pressure || e.pressure || 0.5);
+                    drawSmoothPoint(pos);
+                }
+            } else {
+                const pos = getPointerPos(e);
+                ctx.putImageData(snapshotBeforeShape, 0, 0);
+                applyStrokeStyle(e.pressure || 0.5);
+                drawShape(startX, startY, pos.x, pos.y);
+            }
+        }, { passive: false });
+
+        function finishDrawing(e) {
+            if (!isDrawing) return;
+            if (e && activePointerId !== null && e.pointerId !== activePointerId) return;
+            isDrawing = false;
+            activePointerId = null;
+            ctx.globalCompositeOperation = 'source-over';
+            ctx.globalAlpha = 1;
+            if (e && ['pen', 'highlighter', 'eraser'].includes(currentTool)) {
+                const pos = getPointerPos(e);
+                if (Math.hypot(pos.x - lastPointX, pos.y - lastPointY) > 0.2) {
+                    applyStrokeStyle(e.pressure || 0.5);
+                    ctx.beginPath();
+                    ctx.moveTo(lastPointX, lastPointY);
+                    ctx.lineTo(pos.x, pos.y);
+                    ctx.stroke();
+                }
+            }
+            saveCanvasState();
+        }
+
+        canvas.addEventListener('pointerup', finishDrawing);
+        canvas.addEventListener('pointercancel', finishDrawing);
+        canvas.addEventListener('lostpointercapture', finishDrawing);
+
+        function drawShape(x1, y1, x2, y2) {
+            ctx.beginPath();
+            if (currentTool === 'line') {
+                ctx.moveTo(x1, y1);
+                ctx.lineTo(x2, y2);
+                ctx.stroke();
+            } else if (currentTool === 'rect') {
+                ctx.strokeRect(x1, y1, x2 - x1, y2 - y1);
+            } else if (currentTool === 'circle') {
+                const rx = Math.abs(x2 - x1) / 2;
+                const ry = Math.abs(y2 - y1) / 2;
+                const cx = Math.min(x1, x2) + rx;
+                const cy = Math.min(y1, y2) + ry;
+                ctx.ellipse(cx, cy, rx, ry, 0, 0, Math.PI * 2);
+                ctx.stroke();
+            } else if (currentTool === 'arrow') {
+                const headLen = Math.max(14, currentSize * 3.2);
+                const angle = Math.atan2(y2 - y1, x2 - x1);
+                ctx.moveTo(x1, y1);
+                ctx.lineTo(x2, y2);
+                ctx.stroke();
+
+                ctx.beginPath();
+                ctx.moveTo(x2, y2);
+                ctx.lineTo(x2 - headLen * Math.cos(angle - Math.PI / 6), y2 - headLen * Math.sin(angle - Math.PI / 6));
+                ctx.lineTo(x2 - headLen * Math.cos(angle + Math.PI / 6), y2 - headLen * Math.sin(angle + Math.PI / 6));
+                ctx.closePath();
+                ctx.fill();
+            }
+        }
+
+        // ==================== التحكم في شريط الأدوات ====================
+        function selectTool(tool) {
+            playTone('click');
+            currentTool = tool;
+            document.querySelectorAll('.tool-btn').forEach(btn => {
+                const isSelected = btn.dataset.tool === tool;
+                btn.classList.toggle('berry-primary-btn', isSelected);
+                btn.classList.toggle('text-white', isSelected);
+                btn.classList.toggle('bg-blush-100', !isSelected);
+                btn.classList.toggle('text-berry-800', !isSelected);
+                btn.classList.toggle('hover:bg-blush-200', !isSelected);
+            });
+        }
+
+        function selectColor(color) {
+            playTone('click');
+            currentColor = color;
+            if (currentTool === 'eraser') selectTool('pen');
+            document.querySelectorAll('.color-btn').forEach(btn => {
+                const isSelected = btn.dataset.color === color;
+                btn.classList.toggle('ring-2', isSelected);
+                btn.classList.toggle('ring-gold-500', isSelected);
+                btn.classList.toggle('scale-110', isSelected);
+            });
+        }
+
+        function selectSize(size) {
+            playTone('click');
+            currentSize = size;
+            document.querySelectorAll('.size-btn').forEach(btn => {
+                const isSelected = Number(btn.dataset.size) === size;
+                btn.classList.toggle('border-berry-500', isSelected);
+                btn.classList.toggle('bg-blush-100', isSelected);
+                btn.classList.toggle('border-transparent', !isSelected);
+                btn.classList.toggle('bg-blush-50', !isSelected);
+            });
+        }
+
+        function toggleFocusMode() {
+            playTone('click');
+            isFocusMode = !isFocusMode;
+            document.getElementById('level-banner').classList.toggle('hidden', isFocusMode);
+            document.getElementById('main-footer').classList.toggle('hidden', isFocusMode);
+            document.getElementById('text-focus-mode').textContent = isFocusMode ? 'إنهاء التكبير' : 'تكبير السبورة';
+            setTimeout(resizeCanvasAndRestore, 50);
+        }
+
+        // ==================== إدارة المراحل الخمس ====================
+        function renderStepper() {
+            const container = document.getElementById('levels-stepper');
+            container.innerHTML = '';
+
+            levelsData.forEach((lvl, idx) => {
+                const isCurrent = idx === currentLevel;
+                const isDone = completedLevels[idx];
+
+                const btn = document.createElement('button');
+                btn.onclick = () => changeLevel(idx);
+                btn.className = `w-8 h-8 sm:w-9 sm:h-9 rounded-xl font-black text-xs sm:text-sm flex items-center justify-center transition-all duration-200 border ${
+                    isCurrent 
+                        ? 'berry-primary-btn text-white border-gold-300 scale-110' 
+                        : isDone 
+                            ? 'bg-emerald-100 text-emerald-800 border-emerald-400 hover:bg-emerald-200' 
+                            : 'bg-ivory-100 text-berry-700 border-berry-200 hover:border-gold-500'
+                }`;
+                btn.innerHTML = isDone && !isCurrent ? '✓' : (idx + 1);
+                btn.title = `${lvl.badge}: ${lvl.title}`;
+                container.appendChild(btn);
+            });
+        }
+
+        function changeLevel(index) {
+            if (index < 0 || index >= levelsData.length) return;
+            playTone('click');
+            currentLevel = index;
+            const lvl = levelsData[currentLevel];
+
+            document.getElementById('level-badge').textContent = lvl.badge;
+            document.getElementById('level-title').textContent = lvl.title;
+            document.getElementById('btn-prev-level').disabled = currentLevel === 0;
+
+            const statusEl = document.getElementById('level-status-indicator');
+            if (completedLevels[currentLevel]) {
+                statusEl.innerHTML = '<span class="text-emerald-700">حالة المستوى: مكتمل بنجاح ✓</span>';
+            } else {
+                statusEl.innerHTML = '<span class="text-berry-700">حالة المستوى: قيد الشرح ✍️</span>';
+            }
+
+            // إخفاء رسالة الخطأ السابقة ومحاولة تحميل الصورة الأساسية أو البديلة
+            const fallbackBox = document.getElementById('image-fallback-box');
+            fallbackBox.classList.add('hidden');
+            fallbackBox.classList.remove('flex');
+
+            let fallbackIdx = 0;
+            questionImg.onload = () => {
+                fallbackBox.classList.add('hidden');
+                fallbackBox.classList.remove('flex');
+                resizeCanvasAndRestore();
+            };
+            questionImg.onerror = () => {
+                if (lvl.fallbackImages && fallbackIdx < lvl.fallbackImages.length) {
+                    const nextSrc = lvl.fallbackImages[fallbackIdx++];
+                    lvl.image = nextSrc;
+                    questionImg.src = nextSrc;
+                } else {
+                    document.getElementById('missing-img-name').textContent = lvl.image;
+                    fallbackBox.classList.remove('hidden');
+                    fallbackBox.classList.add('flex');
+                }
+            };
+            questionImg.src = lvl.image;
+
+            renderStepper();
+        }
+
+        // السماح برفع صورة السؤال يدوياً من جهاز iPad في حال عملت الصفحة خارج مجلد الصور
+        function handleManualImageUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                levelsData[currentLevel].image = e.target.result;
+                questionImg.onload = () => resizeCanvasAndRestore();
+                questionImg.src = e.target.result;
+                const fallbackBox = document.getElementById('image-fallback-box');
+                fallbackBox.classList.add('hidden');
+                fallbackBox.classList.remove('flex');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // ==================== نظام المسابقة التفاعلية (اختبري فهمك) ====================
+        function openQuizModal() {
+            playTone('click');
+            const lvl = levelsData[currentLevel];
+            const modal = document.getElementById('quiz-modal');
+
+            document.getElementById('quiz-question-heading').textContent = `${lvl.badge} — ${lvl.title}`;
+            document.getElementById('quiz-question-subtext').textContent = lvl.promptText;
+
+            document.getElementById('quiz-preview-img').src = lvl.image;
+            document.getElementById('quiz-preview-drawing').src = canvas.toDataURL();
+
+            const feedbackBox = document.getElementById('quiz-feedback-box');
+            feedbackBox.classList.add('hidden');
+            document.getElementById('next-level-action').classList.add('hidden');
+            document.getElementById('next-level-action').classList.remove('flex');
+
+            const grid = document.getElementById('options-grid');
+            grid.innerHTML = '';
+
+            lvl.options.forEach(opt => {
+                const card = document.createElement('button');
+                card.id = `option-card-${opt.key}`;
+                card.onclick = () => handleAnswerSelection(opt.key, card);
+                card.className = `group relative flex items-center gap-4 p-4 sm:p-5 rounded-2xl bg-blush-50 hover:bg-blush-100 border-2 border-gold-400/70 hover:border-berry-500 transition-all duration-200 text-right shadow-sm active:scale-[0.98]`;
+
+                card.innerHTML = `
+                    <span class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl gold-accent-btn text-berry-900 font-black text-lg sm:text-xl flex items-center justify-center shrink-0 border border-gold-500/50 group-hover:scale-105 transition-transform">
+                        ${opt.key}
+                    </span>
+                    <span class="text-base sm:text-lg font-extrabold text-berry-800 group-hover:text-berry-600 transition-colors">
+                        ${opt.label}
+                    </span>
+                `;
+                grid.appendChild(card);
+            });
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeQuizModal() {
+            playTone('click');
+            const modal = document.getElementById('quiz-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function handleAnswerSelection(selectedKey, cardElement) {
+            const lvl = levelsData[currentLevel];
+            const isCorrect = selectedKey === lvl.correctKey;
+            const feedbackBox = document.getElementById('quiz-feedback-box');
+            const feedbackTitle = document.getElementById('quiz-feedback-title');
+            const feedbackDesc = document.getElementById('quiz-feedback-desc');
+            const nextAction = document.getElementById('next-level-action');
+
+            document.querySelectorAll('#options-grid button').forEach(btn => {
+                btn.classList.remove('border-emerald-500', 'bg-emerald-50', 'border-rose-500', 'bg-rose-50', 'animate-shake');
+            });
+
+            feedbackBox.classList.remove('hidden', 'bg-emerald-50', 'border-emerald-400', 'text-emerald-900', 'bg-rose-50', 'border-rose-400', 'text-rose-900');
+
+            if (isCorrect) {
+                playTone('success');
+                launchPinkGoldConfetti();
+
+                cardElement.classList.add('border-emerald-500', 'bg-emerald-50', 'ring-2', 'ring-emerald-400/50');
+                feedbackBox.classList.add('bg-emerald-50', 'border-emerald-400', 'text-emerald-900');
+                feedbackTitle.textContent = "إجابة صحيحة! ✨";
+                feedbackDesc.textContent = lvl.explanationHint;
+
+                completedLevels[currentLevel] = true;
+                renderStepper();
+                document.getElementById('level-status-indicator').innerHTML = '<span class="text-emerald-700">حالة المستوى: مكتمل بنجاح ✓</span>';
+
+                nextAction.classList.remove('hidden');
+                nextAction.classList.add('flex');
+                const nextBtnText = document.getElementById('btn-next-level-text');
+                if (currentLevel === levelsData.length - 1) {
+                    nextBtnText.textContent = "إنهاء التحدي وعرض الشارة الذهبية 🏆";
+                } else {
+                    nextBtnText.textContent = `الانتقال إلى ${levelsData[currentLevel + 1].badge}`;
+                }
+            } else {
+                playTone('error');
+                cardElement.classList.add('border-rose-500', 'bg-rose-50', 'animate-shake');
+                feedbackBox.classList.add('bg-rose-50', 'border-rose-400', 'text-rose-900');
+                feedbackTitle.textContent = "محاولة قريبة! راجعي خطوات الحل وحاولي مجددًا 💡";
+                feedbackDesc.textContent = "يمكنكِ اختيار بطاقة أخرى مباشرة أو العودة للسبورة لمراجعة الشرح.";
+                nextAction.classList.add('hidden');
+                nextAction.classList.remove('flex');
+            }
+        }
+
+        function goToNextLevel() {
+            closeQuizModal();
+            if (currentLevel < levelsData.length - 1) {
+                changeLevel(currentLevel + 1);
+            } else {
+                showCompletionScreen();
+            }
+        }
+
+        // ==================== الشاشة الختامية الفاخرة ====================
+        function showCompletionScreen() {
+            playTone('fanfare');
+            launchPinkGoldConfetti(140);
+
+            const summaryContainer = document.getElementById('completed-levels-summary');
+            summaryContainer.innerHTML = '';
+
+            levelsData.forEach((lvl) => {
+                const correctObj = lvl.options.find(o => o.key === lvl.correctKey);
+                const item = document.createElement('div');
+                item.className = "flex items-center justify-between bg-ivory-100 border border-gold-400/60 rounded-xl px-3.5 py-2.5 shadow-sm";
+                item.innerHTML = `
+                    <div class="flex items-center gap-2.5">
+                        <span class="w-6 h-6 rounded-full berry-primary-btn text-white font-black text-xs flex items-center justify-center shrink-0">✓</span>
+                        <div>
+                            <p class="text-xs font-black text-berry-700">${lvl.badge}</p>
+                            <p class="text-[11px] text-mauve-700 font-semibold truncate max-w-[190px] sm:max-w-[220px]">${lvl.title}</p>
+                        </div>
+                    </div>
+                    <span class="text-xs font-extrabold text-emerald-800 bg-emerald-100 px-2.5 py-1 rounded-lg border border-emerald-300">
+                        ${lvl.correctKey}: ${correctObj ? correctObj.label : ''}
+                    </span>
+                `;
+                summaryContainer.appendChild(item);
+            });
+
+            const screen = document.getElementById('completion-screen');
+            screen.classList.remove('hidden');
+            screen.classList.add('flex');
+        }
+
+        function closeCompletionToReview() {
+            playTone('click');
+            const screen = document.getElementById('completion-screen');
+            screen.classList.add('hidden');
+            screen.classList.remove('flex');
+        }
+
+        function restartWholeStudio() {
+            playTone('click');
+            completedLevels = [false, false, false, false, false];
+            levelCanvasHistory.forEach(h => { h.undoStack = []; h.redoStack = []; });
+            closeCompletionToReview();
+            changeLevel(0);
+        }
+
+        // ==================== نافذة ضبط الإجابات الصحيحة ====================
+        function openSettingsModal() {
+            playTone('click');
+            const list = document.getElementById('settings-list');
+            list.innerHTML = '';
+
+            levelsData.forEach((lvl, idx) => {
+                const row = document.createElement('div');
+                row.className = "bg-blush-50 border border-gold-400/60 rounded-2xl p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3";
+                
+                const optionsSelect = lvl.options.map(opt => 
+                    `<option value="${opt.key}" ${lvl.correctKey === opt.key ? 'selected' : ''}>${opt.key} — ${opt.label}</option>`
+                ).join('');
+
+                row.innerHTML = `
+                    <div>
+                        <span class="text-xs font-extrabold text-berry-600">${lvl.badge}</span>
+                        <h4 class="text-sm font-black text-berry-800">${lvl.title}</h4>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <label class="text-xs text-mauve-700 font-bold shrink-0">الإجابة الصحيحة:</label>
+                        <select onchange="updateLevelAnswer(${idx}, this.value)" class="bg-ivory-100 text-berry-800 font-extrabold text-xs sm:text-sm rounded-xl px-3 py-2 border border-gold-400 focus:outline-none focus:border-berry-500">
+                            ${optionsSelect}
+                        </select>
+                    </div>
+                `;
+                list.appendChild(row);
+            });
+
+            const modal = document.getElementById('settings-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function updateLevelAnswer(levelIdx, newKey) {
+            levelsData[levelIdx].correctKey = newKey;
+            playTone('click');
+        }
+
+        function closeSettingsModal() {
+            playTone('click');
+            const modal = document.getElementById('settings-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // ==================== مؤثر الجزيئات الاحتفالية الوردية والذهبية ====================
+        const confettiCanvas = document.getElementById('confetti-canvas');
+        const cCtx = confettiCanvas.getContext('2d');
+        let particles = [];
+        let confettiAnimId = null;
+
+        function launchPinkGoldConfetti(count = 80) {
+            confettiCanvas.width = window.innerWidth;
+            confettiCanvas.height = window.innerHeight;
+
+            const colors = ['#E8C568', '#D4AF37', '#F2B2D1', '#C84B7A', '#C9B1DB', '#FFFDF9'];
+            for (let i = 0; i < count; i++) {
+                particles.push({
+                    x: Math.random() * confettiCanvas.width,
+                    y: -20 - Math.random() * 150,
+                    size: Math.random() * 7 + 4,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    speedY: Math.random() * 3.5 + 2.4,
+                    speedX: (Math.random() - 0.5) * 3,
+                    rotation: Math.random() * 360,
+                    rotSpeed: (Math.random() - 0.5) * 8
+                });
+            }
+
+            if (!confettiAnimId) animateConfetti();
+        }
+
+        function animateConfetti() {
+            cCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+            particles.forEach((p, index) => {
+                p.y += p.speedY;
+                p.x += p.speedX;
+                p.rotation += p.rotSpeed;
+
+                cCtx.save();
+                cCtx.translate(p.x, p.y);
+                cCtx.rotate((p.rotation * Math.PI) / 180);
+                cCtx.fillStyle = p.color;
+                cCtx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
+                cCtx.restore();
+
+                if (p.y > confettiCanvas.height + 20) {
+                    particles.splice(index, 1);
+                }
+            });
+
+            if (particles.length > 0) {
+                confettiAnimId = requestAnimationFrame(animateConfetti);
+            } else {
+                confettiAnimId = null;
+            }
+        }
+
+        // ==================== تهيئة التطبيق عند التحميل وتغيير حجم الشاشة ====================
+        window.addEventListener('resize', () => {
+            requestAnimationFrame(resizeCanvasAndRestore);
+        });
+        window.addEventListener('orientationchange', () => {
+            setTimeout(resizeCanvasAndRestore, 250);
+            setTimeout(resizeCanvasAndRestore, 650);
+        });
+        if ('ResizeObserver' in window) {
+            const boardObserver = new ResizeObserver(() => requestAnimationFrame(resizeCanvasAndRestore));
+            window.addEventListener('load', () => {
+                const board = document.getElementById('board-wrapper');
+                if (board) boardObserver.observe(board);
+            }, { once: true });
+        }
+
+        window.onload = () => {
+            selectTool('pen');
+            selectColor('#882B52');
+            selectSize(3);
+            changeLevel(0);
+            if (window.visualViewport) {
+                window.visualViewport.addEventListener('resize', () => requestAnimationFrame(resizeCanvasAndRestore));
+            }
+        };
+    </script>
+</body>
+</html>
